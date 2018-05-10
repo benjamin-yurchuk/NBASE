@@ -28,16 +28,16 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
+                  <Button alignment="CENTER" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: none;" text="ВИХІД">
+                     <font>
+                        <Font name="Raanana" size="24.0" />
+                     </font>
+                  </Button>
                   <ImageView fitHeight="42.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                      <image>
                         <Image url="@../../../../../../../Design/фрагмент2.png" />
                      </image>
                   </ImageView>
-                  <Button alignment="CENTER" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: none;" text="ВИХІД">
-                     <font>
-                        <Font name="Roboto Condensed Regular" size="24.0" />
-                     </font>
-                  </Button>
                </children>
                <padding>
                   <Insets left="20.0" right="20.0" />
@@ -51,15 +51,18 @@
          <children>
             <Label alignment="CENTER" prefHeight="48.0" prefWidth="301.0" text="Меню Адміна:" textFill="WHITE">
                <font>
-                  <Font name="Roboto Condensed Bold" size="30.0" />
+                  <Font size="30.0" />
                </font>
                <padding>
                   <Insets bottom="10.0" top="10.0" />
                </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
             </Label>
             <Label text="Користувачі" textFill="WHITE">
                <font>
-                  <Font name="Roboto Condensed Bold" size="17.0" />
+                  <Font size="17.0" />
                </font>
             </Label>
             <GridPane>
