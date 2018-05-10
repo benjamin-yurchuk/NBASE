@@ -1,0 +1,106 @@
+package com.nbase;
+
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+
+import java.sql.*;
+import java.util.Scanner;
+
+public class DataBase {
+
+    private static final String HOST = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7235535";
+    private static final String USERNAME = "sql7235535";
+    private static final String PASSWORD = "rootroot123";
+
+
+    Connection connection;
+    Statement statement;
+    ResultSet resultSet;
+    PreparedStatement preparedStatement;
+
+    Users users = new Users();
+
+    public DataBase() {
+
+        try {
+            connection = DriverManager.getConnection(HOST, USERNAME, PASSWORD);
+            statement = connection.createStatement();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public int checkUserRole(PasswordField passwordField) {
+
+        String usersRoleAdmin = "admin";
+        String usersRoleWaiter = "waiter";
+
+        //userRole: Admin = 1, Manager = 2, Waiter = 3
+        int usersRole = 0;
+
+        int okUser = 0;
+        int good = 0;
+
+        String outputQuery = "SELECT * FROM Users";
+
+        try {
+            resultSet = (statement.executeQuery(outputQuery));
+
+            while (good == 0) {
+
+                while (resultSet.next()) {
+
+                    users.setPassword(resultSet.getString("password"));
+                    users.setUserRole(resultSet.getString("users_role"));
+
+
+                    if (passwordField.getText().equals(users.getPassword()) && usersRoleAdmin.equals(users.getUserRole())) {
+                        usersRole = 1;
+                        okUser++;
+                        good++;
+                        break;
+                    }if (passwordField.getText().equals(users.getPassword()) && usersRoleWaiter.equals(users.getUserRole())) {
+                        usersRole = 3;
+                        okUser++;
+                        good++;
+                        break;
+                    }
+                }
+
+                if (okUser == 0) {
+                    good++;
+                }
+            }
+
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return usersRole;
+    }
+
+    public void addUser(TextField textFieldFirstName, TextField textFieldLastName, TextField textFieldShortName, TextField textFieldLogin, PasswordField passwordField, String choiceBox) {
+
+        String inputQuery = "INSERT INTO Users (firstname, lastname, shortname, login, password, users_role) VALUES (?, ?, ?, ?, ?, ?)";
+
+        try {
+            preparedStatement = connection.prepareStatement(inputQuery);
+
+            preparedStatement.setString(1, textFieldFirstName.getText());
+            preparedStatement.setString(2, textFieldLastName.getText());
+            preparedStatement.setString(3, textFieldShortName.getText());
+            preparedStatement.setString(4, textFieldLogin.getText());
+            preparedStatement.setString(5, passwordField.getText());
+            preparedStatement.setString(6, choiceBox.getValue());
+
+            preparedStatement.execute();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+}
