@@ -1,11 +1,9 @@
 package com.nbase;
 
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.sql.*;
-import java.util.Scanner;
 
 public class DataBase {
 
@@ -82,7 +80,7 @@ public class DataBase {
         return usersRole;
     }
 
-    public void addUser(TextField textFieldFirstName, TextField textFieldLastName, TextField textFieldShortName, TextField textFieldLogin, PasswordField passwordField, String choiceBox) {
+    public void addUser(TextField textFieldFirstName, TextField textFieldLastName, TextField textFieldShortName, TextField textFieldLogin, PasswordField passwordField, String roleUser) {
 
         String inputQuery = "INSERT INTO Users (firstname, lastname, shortname, login, password, users_role) VALUES (?, ?, ?, ?, ?, ?)";
 
@@ -94,7 +92,7 @@ public class DataBase {
             preparedStatement.setString(3, textFieldShortName.getText());
             preparedStatement.setString(4, textFieldLogin.getText());
             preparedStatement.setString(5, passwordField.getText());
-            preparedStatement.setString(6, choiceBox.getValue());
+            preparedStatement.setString(6, roleUser);
 
             preparedStatement.execute();
 

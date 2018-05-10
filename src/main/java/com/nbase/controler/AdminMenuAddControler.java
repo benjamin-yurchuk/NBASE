@@ -1,19 +1,14 @@
 package com.nbase.controler;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.nbase.DataBase;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class AdminMenuAddControler {
 
@@ -60,7 +55,7 @@ public class AdminMenuAddControler {
     void initialize() {
 
         InsertNewUserToDataBase.setOnAction(event ->
-            addNewUser()
+                addNewUser()
         );
 
         RoleOfUserField.getItems().addAll("Адміністратор", "Менеджер", "Офіціант");
@@ -69,6 +64,7 @@ public class AdminMenuAddControler {
     }
 
     private void addNewUser() {
+
         DataBase dataBase = new DataBase();
 
         String role = "";
@@ -82,11 +78,10 @@ public class AdminMenuAddControler {
         }
 
         dataBase.addUser(NameOfUserField, LastNameOfUserField, ShortNameOfUserField, LoginOfUserField, PasswordOfUserField, role);
-        System.out.println("User added");
 
     }
 
-    private void ConfirmWindow(){
+    /*private void ConfirmWindow(){
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/fxml/adminMenuAddUser.fxml"));
 
@@ -100,7 +95,7 @@ public class AdminMenuAddControler {
         Stage stage = new Stage();
         stage.setScene(new Scene(parent));
         stage.showAndWait();
-    }
+    }*/
 
 
 
