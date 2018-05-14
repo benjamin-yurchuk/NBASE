@@ -7,8 +7,8 @@ import java.sql.*;
 
 public class DataBase {
 
-    private static final String HOST = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7235535";
-    private static final String USERNAME = "sql7235535";
+    private static final String HOST = "jdbc:mysql://db4free.net:3306/nbaseadmin";
+    private static final String USERNAME = "nbaseadmin";
     private static final String PASSWORD = "rootroot123";
 
 
