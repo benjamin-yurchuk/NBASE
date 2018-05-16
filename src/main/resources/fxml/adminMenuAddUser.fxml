@@ -19,7 +19,7 @@
    <top>
       <VBox prefHeight="67.0" prefWidth="801.0" BorderPane.alignment="CENTER">
          <children>
-            <GridPane alignment="CENTER" prefHeight="86.0" prefWidth="819.0">
+            <GridPane alignment="CENTER" prefHeight="86.0" prefWidth="819.0" style="-fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -30,7 +30,7 @@
                <children>
                   <Button alignment="CENTER" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: none;" text="ВИХІД">
                      <font>
-                        <Font name="Raanana" size="24.0" />
+                        <Font name="Roboto Condensed Regular" size="24.0" />
                      </font>
                   </Button>
                   <ImageView fitHeight="42.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
@@ -51,7 +51,7 @@
          <children>
             <Label alignment="CENTER" prefHeight="48.0" prefWidth="301.0" text="Меню Адміна:" textFill="WHITE">
                <font>
-                  <Font size="30.0" />
+                  <Font name="Roboto Condensed Bold" size="30.0" />
                </font>
                <padding>
                   <Insets bottom="10.0" top="10.0" />
@@ -62,7 +62,7 @@
             </Label>
             <Label text="Користувачі" textFill="WHITE">
                <font>
-                  <Font size="17.0" />
+                  <Font name="Roboto Condensed Regular" size="17.0" />
                </font>
             </Label>
             <GridPane>
@@ -72,29 +72,23 @@
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <VBox.margin>
-                  <Insets left="10.0" top="20.0" />
+                  <Insets left="10.0" top="5.0" />
                </VBox.margin>
                <children>
-                  <Button fx:id="ButtonAddUser" mnemonicParsing="false" style="-fx-background-color: none;" text="Добавити Користувача" textFill="WHITE">
+                  <Button fx:id="ButtonAddUser" mnemonicParsing="false" style="-fx-background-color: none;" text="Добавити Користувача" textFill="WHITE" underline="true">
                      <font>
                         <Font name="Roboto Condensed Regular" size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="ButtonDeleteUser" mnemonicParsing="false" style="-fx-background-color: none;" text="Видалити Користувача" textFill="WHITE" GridPane.rowIndex="1">
+                  <Button fx:id="ButtonSetUpUser" mnemonicParsing="false" style="-fx-background-color: none;" text="Налаштування користувачів" textFill="WHITE" GridPane.rowIndex="1">
                      <font>
                         <Font name="Roboto Condensed Regular" size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="ButtonChangeUser" mnemonicParsing="false" style="-fx-background-color: none;" text="Змінити Користувача" textFill="WHITE" GridPane.rowIndex="2">
-                     <font>
-                        <Font name="Roboto Condensed Regular" size="16.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="ButtonShowUser" mnemonicParsing="false" style="-fx-background-color: none;" text="Список Користувача" textFill="WHITE" GridPane.rowIndex="3">
+                  <Button fx:id="ButtonShowUser" mnemonicParsing="false" style="-fx-background-color: none;" text="Список Користувача" textFill="WHITE" GridPane.rowIndex="2">
                      <font>
                         <Font name="Roboto Condensed Regular" size="16.0" />
                      </font>
@@ -118,7 +112,7 @@
          <children>
             <Label text=" Добавити Користувача" textFill="#282b37">
                <font>
-                  <Font size="30.0" />
+                  <Font name="Roboto Condensed Regular" size="30.0" />
                </font>
                <VBox.margin>
                   <Insets top="20.0" />

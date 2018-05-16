@@ -1,14 +1,19 @@
 package com.nbase.controler;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.nbase.DataBase;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class AdminMenuAddControler {
 
@@ -22,10 +27,7 @@ public class AdminMenuAddControler {
     private Button ButtonAddUser;
 
     @FXML
-    private Button ButtonDeleteUser;
-
-    @FXML
-    private Button ButtonChangeUser;
+    private Button ButtonSetUpUser;
 
     @FXML
     private Button ButtonShowUser;
@@ -53,6 +55,16 @@ public class AdminMenuAddControler {
 
     @FXML
     void initialize() {
+
+        MenuLink menuLink = new MenuLink();
+
+        ButtonSetUpUser.setOnAction( event -> {
+            menuLink.layoutMenuLink(ButtonAddUser, "/fxml/adminMenuSetUpUser.fxml");
+        });
+
+        ButtonShowUser.setOnAction( event -> {
+            menuLink.layoutMenuLink(ButtonAddUser, "/fxml/adminMenuShowUser.fxml");
+        });
 
         InsertNewUserToDataBase.setOnAction(event ->
                 addNewUser()
