@@ -19,6 +19,7 @@ public class Main extends Application {
         Parent root = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
         primaryStage.setTitle("NBASE");
         primaryStage.setScene(new Scene(root));
+        primaryStage.setMaximized(true);
         primaryStage.show();
     }
 }

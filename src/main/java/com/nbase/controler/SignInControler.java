@@ -136,43 +136,17 @@ public class SignInControler {
     //Виклик методу перевірки з DataBase та направлення на меню
     private void authSignIn() {
 
+        MenuLink menuLink = new MenuLink();
+
         int k;
 
         DataBase dataBase = new DataBase();
         k = dataBase.checkUserRole(passwordFieldsignIn);
 
         if (k == 1) {
-            loginButtonSignIn.getScene().getWindow().hide();
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/fxml/adminMenuAddUser.fxml"));
-
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            Parent parent = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(parent));
-            stage.showAndWait();
+            menuLink.layoutMenuLink(loginButtonSignIn, "/fxml/adminMenuAddUser.fxml");
         }if (k == 3) {
-            loginButtonSignIn.getScene().getWindow().hide();
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/fxml/waiterMenu.fxml"));
-
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            Parent parent = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(parent));
-            stage.showAndWait();
+            menuLink.layoutMenuLink(loginButtonSignIn, "/fxml/waiterMenu.fxml");
         }if (k == 0) {
             wrongPasswordSignIn.setText("Неправильний пароль");
         }if (passwordFieldsignIn.getText().equals("")) {

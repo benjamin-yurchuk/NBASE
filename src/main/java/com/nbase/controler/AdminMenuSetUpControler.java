@@ -45,11 +45,5 @@ public class AdminMenuSetUpControler {
         ButtonShowUser.setOnAction( event -> {
             menuLink.layoutMenuLink(ButtonSetUpUser, "/fxml/adminMenuShowUser.fxml");
         });
-
-
-
-
-
-
     }
 }

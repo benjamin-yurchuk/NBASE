@@ -67,7 +67,7 @@ public class AdminMenuAddControler {
         });
 
         InsertNewUserToDataBase.setOnAction(event ->
-                addNewUser()
+            addNewUser()
         );
 
         RoleOfUserField.getItems().addAll("Адміністратор", "Менеджер", "Офіціант");
@@ -92,23 +92,5 @@ public class AdminMenuAddControler {
         dataBase.addUser(NameOfUserField, LastNameOfUserField, ShortNameOfUserField, LoginOfUserField, PasswordOfUserField, role);
 
     }
-
-    /*private void ConfirmWindow(){
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/fxml/adminMenuAddUser.fxml"));
-
-        try {
-            loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        Parent parent = loader.getRoot();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(parent));
-        stage.showAndWait();
-    }*/
-
-
 
 }

@@ -5,9 +5,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+
+import java.awt.*;
 import java.io.IOException;
 
 public class MenuLink {
+
+    GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+
+    int width = gd.getDisplayMode().getWidth();
+    int height = gd.getDisplayMode().getHeight();
 
     public void layoutMenuLink(Button buttonHide, String link) {
 
@@ -24,7 +31,7 @@ public class MenuLink {
 
         Parent parent = loader.getRoot();
         Stage stage = new Stage();
-        stage.setScene(new Scene(parent));
-        stage.showAndWait();
+        stage.setScene(new Scene(parent, width, height));
+        stage.show();
     }
 }
