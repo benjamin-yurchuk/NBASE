@@ -101,4 +101,17 @@ public class DataBase {
         }
     }
 
+    public void deleteUser(String login) {
+
+        String DeleteQuery = "DELETE FROM Users WHERE login = '"+login+"' " ;
+
+        try {
+            statement = connection.createStatement();
+            statement.executeUpdate(DeleteQuery);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

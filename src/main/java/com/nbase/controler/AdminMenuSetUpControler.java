@@ -3,6 +3,7 @@ package com.nbase.controler;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.nbase.DataBase;
 import com.nbase.Loader;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -22,25 +23,31 @@ public class AdminMenuSetUpControler {
     private Button ButtonSetUpUser;
 
     @FXML
-    private Button ButtonShowUser;
+    private Button EditUsers;
 
     @FXML
-    private Button InsertNewUserToDataBase;
+    private Button DeleteUsers;
 
-    @FXML
-    private Button InsertNewUserToDataBase1;
+    DataBase dataBase = new DataBase();
 
     @FXML
     void initialize() {
-
         Loader loader = new Loader();
 
         ButtonAddUser.setOnAction( event -> {
             loader.layoutMenuLink(ButtonSetUpUser, "/fxml/adminMenuAddUser.fxml");
         });
 
-        ButtonShowUser.setOnAction( event -> {
+        ButtonSetUpUser.setOnAction( event -> {
             loader.layoutMenuLink(ButtonSetUpUser, "/fxml/adminMenuShowUser.fxml");
         });
+
+        DeleteUsers.setOnAction(event ->
+            dataBase.deleteUser("benjamin")
+        );
+
+
     }
 }
+
+
