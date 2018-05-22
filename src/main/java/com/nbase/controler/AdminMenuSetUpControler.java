@@ -1,14 +1,11 @@
 package com.nbase.controler;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.nbase.Loader;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 public class AdminMenuSetUpControler {
 
@@ -36,14 +33,14 @@ public class AdminMenuSetUpControler {
     @FXML
     void initialize() {
 
-        MenuLink menuLink = new MenuLink();
+        Loader loader = new Loader();
 
         ButtonAddUser.setOnAction( event -> {
-            menuLink.layoutMenuLink(ButtonSetUpUser, "/fxml/adminMenuAddUser.fxml");
+            loader.layoutMenuLink(ButtonSetUpUser, "/fxml/adminMenuAddUser.fxml");
         });
 
         ButtonShowUser.setOnAction( event -> {
-            menuLink.layoutMenuLink(ButtonSetUpUser, "/fxml/adminMenuShowUser.fxml");
+            loader.layoutMenuLink(ButtonSetUpUser, "/fxml/adminMenuShowUser.fxml");
         });
     }
 }
