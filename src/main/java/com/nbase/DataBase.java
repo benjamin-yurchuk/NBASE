@@ -19,6 +19,8 @@ public class DataBase {
 
     Users users = new Users();
 
+    /** Метод підключення до Бази даних **/
+
     public DataBase() {
 
         try {
@@ -31,12 +33,13 @@ public class DataBase {
 
     }
 
+    /** Перевіка користувача і присвоєння цифри: Admin = 1, Manager = 2, Waiter = 3 **/
+
     public int checkUserRole(PasswordField passwordField) {
 
         String usersRoleAdmin = "admin";
         String usersRoleWaiter = "waiter";
 
-        //userRole: Admin = 1, Manager = 2, Waiter = 3
         int usersRole = 0;
 
         int okUser = 0;
@@ -79,6 +82,8 @@ public class DataBase {
 
         return usersRole;
     }
+
+    /** Добавляє юзера в таблицю USER **/
 
     public void addUser(TextField textFieldFirstName, TextField textFieldLastName, TextField textFieldShortName, TextField textFieldLogin, PasswordField passwordField, String roleUser) {
 
