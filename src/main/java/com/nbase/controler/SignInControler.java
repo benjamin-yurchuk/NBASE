@@ -1,20 +1,15 @@
 package com.nbase.controler;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
 
 import com.nbase.DataBase;
+import com.nbase.Loader;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
-import javafx.scene.text.Font;
-import javafx.stage.Stage;
 
 public class SignInControler {
 
@@ -136,7 +131,7 @@ public class SignInControler {
     //Виклик методу перевірки з DataBase та направлення на меню
     private void authSignIn() {
 
-        MenuLink menuLink = new MenuLink();
+        Loader loader = new Loader();
 
         int k;
 
@@ -144,9 +139,9 @@ public class SignInControler {
         k = dataBase.checkUserRole(passwordFieldsignIn);
 
         if (k == 1) {
-            menuLink.layoutMenuLink(loginButtonSignIn, "/fxml/adminMenuAddUser.fxml");
+            loader.layoutMenuLink(loginButtonSignIn, "/fxml/adminMenuAddUser.fxml");
         }if (k == 3) {
-            menuLink.layoutMenuLink(loginButtonSignIn, "/fxml/waiterMenu.fxml");
+            loader.layoutMenuLink(loginButtonSignIn, "/fxml/waiterMenu.fxml");
         }if (k == 0) {
             wrongPasswordSignIn.setText("Неправильний пароль");
         }if (passwordFieldsignIn.getText().equals("")) {
