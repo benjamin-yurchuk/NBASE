@@ -71,7 +71,6 @@
                     <rowConstraints>
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <VBox.margin>
                         <Insets left="10.0" top="5.0" />
@@ -83,11 +82,6 @@
                             </font>
                         </Button>
                         <Button fx:id="ButtonSetUpUser" mnemonicParsing="false" style="-fx-background-color: none;" text="Налаштування користувачів" textFill="WHITE" underline="true" GridPane.rowIndex="1">
-                            <font>
-                                <Font name="Roboto Condensed Regular" size="16.0" />
-                            </font>
-                        </Button>
-                        <Button fx:id="ButtonShowUser" mnemonicParsing="false" style="-fx-background-color: none;" text="Список Користувачів" textFill="WHITE" GridPane.rowIndex="2">
                             <font>
                                 <Font name="Roboto Condensed Regular" size="16.0" />
                             </font>
