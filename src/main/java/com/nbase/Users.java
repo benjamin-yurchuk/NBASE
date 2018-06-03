@@ -2,7 +2,6 @@ package com.nbase;
 
 public class Users {
 
-    private int id;
     private String firstname;
     private String lastname;
     private String shortname;
@@ -19,21 +18,13 @@ public class Users {
         this.password = password;
     }
 
-    public Users(String firstname, String lastname, String shortname, String username, String password, String usersRole) {
+    public Users(String firstname, String lastname, String shortname, String login, String password, String usersRole) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.shortname = shortname;
-        this.login = username;
+        this.login = login;
         this.password = password;
         this.usersRole = usersRole;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getFirstname() { return firstname; }

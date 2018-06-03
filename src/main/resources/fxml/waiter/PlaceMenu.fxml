@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nbase.controler.waiter.PalceMenuController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <ButtonBar prefHeight="70.0" prefWidth="700.0" style="-fx-background-color: #282B37;" BorderPane.alignment="CENTER">
+               <buttons>
+                  <Button fx:id="palce1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" style="-fx-background-color: #282B37;" text="Place 1" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="BtnMenu" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" style="-fx-background-color: #282B37;" text="Menu" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="BtnExit" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" style="-fx-background-color: #282B37;" text="Exit" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+               </buttons>
+            </ButtonBar>
+         </bottom>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane accessibleRole="BUTTON" layoutX="34.0" layoutY="36.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #B4DECB;">
+                     <children>
+                        <Label layoutX="55.0" layoutY="13.0" AnchorPane.topAnchor="15.0">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="40.0" text="Table 1" AnchorPane.topAnchor="40.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="56.0" layoutY="63.0" AnchorPane.bottomAnchor="15.0">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane accessibleRole="BUTTON" layoutX="205.0" layoutY="38.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #F1C40F;">
+                     <children>
+                        <Label layoutX="39.0" layoutY="26.0" text="Sasha Korban" AnchorPane.topAnchor="15.0">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="40.0" text="Table 2" AnchorPane.topAnchor="40.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="62.0" layoutY="72.0" text="2000$" AnchorPane.bottomAnchor="13.0">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane accessibleRole="BUTTON" layoutX="600.0" layoutY="40.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #B4DECB;">
+                     <children>
+                        <Label layoutX="55.0" layoutY="13.0" AnchorPane.topAnchor="15.0">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="40.0" text="Table 4" AnchorPane.topAnchor="40.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="56.0" layoutY="63.0" AnchorPane.bottomAnchor="15.0">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane accessibleRole="BUTTON" layoutX="409.0" layoutY="42.0" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #B4DECB;">
+                     <children>
+                        <Label layoutX="55.0" layoutY="13.0" AnchorPane.topAnchor="15.0">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="40.0" text="Table 3" AnchorPane.topAnchor="40.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="56.0" layoutY="63.0" AnchorPane.bottomAnchor="15.0">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

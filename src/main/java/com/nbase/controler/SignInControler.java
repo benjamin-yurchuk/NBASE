@@ -139,9 +139,9 @@ public class SignInControler {
         k = dataBase.checkUserRole(passwordFieldsignIn);
 
         if (k == 1) {
-            loader.layoutMenuLink(loginButtonSignIn, "/fxml/adminMenuAddUser.fxml");
+            loader.layoutMenuLink(loginButtonSignIn, "/fxml/admin/adminMenuAddUser.fxml");
         }if (k == 3) {
-            loader.layoutMenuLink(loginButtonSignIn, "/fxml/waiterMenu.fxml");
+            loader.layoutMenuLink(loginButtonSignIn, "/fxml/waiter/PlaceMenu.fxml");
         }if (k == 0) {
             wrongPasswordSignIn.setText("Неправильний пароль");
         }if (passwordFieldsignIn.getText().equals("")) {

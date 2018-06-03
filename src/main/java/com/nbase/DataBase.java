@@ -1,9 +1,13 @@
 package com.nbase;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataBase {
 
@@ -12,10 +16,10 @@ public class DataBase {
     private static final String PASSWORD = "rootroot123";
 
 
-    Connection connection;
-    Statement statement;
-    ResultSet resultSet;
-    PreparedStatement preparedStatement;
+    private Connection connection;
+    private Statement statement;
+    private ResultSet resultSet;
+    private PreparedStatement preparedStatement;
 
     Users users = new Users();
 
@@ -33,7 +37,7 @@ public class DataBase {
 
     }
 
-    /** Перевіка користувача і присвоєння цифри: Admin = 1, Manager = 2, Waiter = 3 **/
+    /** Перевіка користувача і присвоєння цифри: admin = 1, manager = 2, waiter = 3 **/
 
     public int checkUserRole(PasswordField passwordField) {
 
@@ -63,6 +67,7 @@ public class DataBase {
                         okUser++;
                         good++;
                         break;
+
                     }if (passwordField.getText().equals(users.getPassword()) && usersRoleWaiter.equals(users.getUserRole())) {
                         usersRole = 3;
                         okUser++;
@@ -85,18 +90,18 @@ public class DataBase {
 
     /** Добавляє юзера в таблицю USER **/
 
-    public void addUser(TextField textFieldFirstName, TextField textFieldLastName, TextField textFieldShortName, TextField textFieldLogin, PasswordField passwordField, String roleUser) {
+    public void addUser(String textFieldFirstName, String textFieldLastName, String textFieldShortName, String textFieldLogin, String passwordField, String roleUser) {
 
         String inputQuery = "INSERT INTO Users (firstname, lastname, shortname, login, password, users_role) VALUES (?, ?, ?, ?, ?, ?)";
 
         try {
             preparedStatement = connection.prepareStatement(inputQuery);
 
-            preparedStatement.setString(1, textFieldFirstName.getText());
-            preparedStatement.setString(2, textFieldLastName.getText());
-            preparedStatement.setString(3, textFieldShortName.getText());
-            preparedStatement.setString(4, textFieldLogin.getText());
-            preparedStatement.setString(5, passwordField.getText());
+            preparedStatement.setString(1, textFieldFirstName);
+            preparedStatement.setString(2, textFieldLastName);
+            preparedStatement.setString(3, textFieldShortName);
+            preparedStatement.setString(4, textFieldLogin);
+            preparedStatement.setString(5, passwordField);
             preparedStatement.setString(6, roleUser);
 
             preparedStatement.execute();
@@ -106,17 +111,25 @@ public class DataBase {
         }
     }
 
+    /** Видаляє юзера з таблици USER **/
+
     public void deleteUser(String login) {
 
-        String DeleteQuery = "DELETE FROM Users WHERE login = '"+login+"' " ;
+        String DELETE = "DELETE FROM Users WHERE login = '"+login+"' " ;
 
         try {
             statement = connection.createStatement();
-            statement.executeUpdate(DeleteQuery);
+            statement.executeUpdate(DELETE);
+            System.out.println("Users with this login '" + login + "' was deleted");
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    /** повертає зєднання з Базою **/
+    public Connection getConnection() {
+        return connection;
     }
 
 }

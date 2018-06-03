@@ -1,4 +1,4 @@
-package com.nbase.controler;
+package com.nbase.controler.admin;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,6 +12,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class AdminMenuAddControler {
+
+    @FXML
+    private Button BtnExit;
 
     @FXML
     private ResourceBundle resources;
@@ -55,11 +58,10 @@ public class AdminMenuAddControler {
         Loader loader = new Loader();
 
         ButtonSetUpUser.setOnAction( event -> {
-            loader.layoutMenuLink(ButtonAddUser, "/fxml/adminMenuSetUpUser.fxml");
+            loader.layoutMenuLink(ButtonAddUser, "/fxml/admin/adminMenuSetUpUser.fxml");
         });
-
-        ButtonShowUser.setOnAction( event -> {
-            loader.layoutMenuLink(ButtonAddUser, "/fxml/adminMenuShowUser.fxml");
+        BtnExit.setOnAction(event -> {
+            loader.layoutMenuLink(BtnExit, "/fxml/signIn.fxml");
         });
 
         InsertNewUserToDataBase.setOnAction(event ->
@@ -85,7 +87,7 @@ public class AdminMenuAddControler {
             role = "waiter";
         }
 
-        dataBase.addUser(NameOfUserField, LastNameOfUserField, ShortNameOfUserField, LoginOfUserField, PasswordOfUserField, role);
+        dataBase.addUser(NameOfUserField.getText(), LastNameOfUserField.getText(), ShortNameOfUserField.getText(), LoginOfUserField.getText(), PasswordOfUserField.getText(), role);
 
     }
 
