@@ -46,9 +46,6 @@ public class AdminMenuSetUpControler {
             loader.layoutMenuLink(ButtonSetUpUser, "/fxml/admin/adminMenuAddUser.fxml");
         });
 
-        ButtonSetUpUser.setOnAction(event -> {
-            loader.layoutMenuLink(ButtonSetUpUser, "/fxml/adminMenuShowUser.fxml");
-        });
 
         BtnExit.setOnAction(event -> {
             loader.layoutMenuLink(BtnExit, "/fxml/signIn.fxml");
