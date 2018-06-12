@@ -34,4 +34,21 @@ public class Loader {
         stage.setScene(new Scene(parent, width, height));
         stage.show();
     }
+
+    public void Show(String link) {
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(link));
+
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent, width, height));
+        stage.show();
+    }
 }

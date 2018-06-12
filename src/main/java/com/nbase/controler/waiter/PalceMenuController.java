@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import com.nbase.Loader;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 
 public class PalceMenuController {
 
@@ -16,10 +17,13 @@ public class PalceMenuController {
     private URL location;
 
     @FXML
-    private Button palce1;
+    private Button btnPlace1;
 
     @FXML
     private Button BtnMenu;
+
+    @FXML
+    private Button ShowWorkSpace;
 
     @FXML
     private Button BtnExit;
@@ -34,5 +38,9 @@ public class PalceMenuController {
         BtnMenu.setOnAction(event -> {
             loader.layoutMenuLink(BtnMenu, "/fxml/waiter/EditorPlaceMenu.fxml");
         });
+        ShowWorkSpace.setOnAction(event -> {
+            loader.layoutMenuLink(BtnMenu, "/fxml/waiter/WaiterWorkSpace.fxml");
+        });
+
     }
 }

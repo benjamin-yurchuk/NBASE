@@ -17,7 +17,7 @@ public class EditorPalceMenuController {
     private URL location;
 
     @FXML
-    private Button palce1;
+    private Button btnPlace1;
 
     @FXML
     private Button BtnMenu;
@@ -43,8 +43,8 @@ public class EditorPalceMenuController {
         BtnExit.setOnAction(event -> {
             loader.layoutMenuLink(BtnExit, "/fxml/signIn.fxml");
         });
-        BtnMenu.setOnAction(event -> {
-            loader.layoutMenuLink(BtnMenu, "/fxml/waiter/EditorPlaceMenu.fxml");
+        btnPlace1.setOnAction(event -> {
+            loader.layoutMenuLink(btnPlace1, "/fxml/waiter/PlaceMenu.fxml");
         });
     }
 }
